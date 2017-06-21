@@ -17,7 +17,7 @@ class Bluesnap
 
         if ($environment === 'production')
         {
-            self::$base_url = 'https://sandbox.bluesnap.com/services/2/';
+            self::$base_url = 'https://ws.bluesnap.com/services/2/';
         }
         else
         {
