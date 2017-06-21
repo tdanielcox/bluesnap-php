@@ -1,0 +1,22 @@
+{
+    "name": "tdanielcox/bluesnap-php",
+    "description": "A PHP Library for the Bluesnap api",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/tdanielcox/bluesnap-php",
+    "authors": [
+        {
+            "name": "Daniel Cox",
+            "email": "tdanielcox@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "tdanielcox\\": "src/"
+        }
+    }
+}
