@@ -1,23 +1,36 @@
 ## Bluesnap PHP Library
 
 
-#### Initialize
+#### Usage
 
 ```php
+<?php namespace App;
+
 include tdanielcox\Bluesnap\Bluesnap;
-
-Bluesnap::init($environment, $api_key, $password);
-```
-
-#### Create a Vendor
-
-```php
 include tdanielcox\Bluesnap\Vendor;
 
-$vendor = Vendor::create([
-    'email' => 'vendoremail@example.com',
-    'country' => 'US'
-]);
+class Gateway 
+{
+    public function __construct() 
+    {
+        $environment = 'staging'; // or 'production'
+        $api_key = 'YOUR_API_KEY';
+        $password = 'YOUR_API_PASSWORD';
+        
+        Bluesnap::init($environment, $api_key, $password);
+    }
+    
+    //  Create a vendor
+    public function createVendor()
+    {
+        $vendor = Vendor::create([
+            'email' => 'vendoremail@example.com',
+            'country' => 'US'
+        ]);
+    }
+}
+
+
 ```
 
 More coming soon...

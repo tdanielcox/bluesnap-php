@@ -61,7 +61,7 @@ class Model
 
     private function _parseChild($child, $type)
     {
-        $class_name = '\\App\\Libraries\\Bluesnap\\Models\\'. ucfirst($child);
+        $class_name = '\\tdanielcox\\Bluesnap\\Models\\'. ucfirst($child);
 
         if ($type === 'collection')
         {
