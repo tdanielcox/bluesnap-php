@@ -1,5 +1,6 @@
 ## Bluesnap PHP Library
 
+### NOTICE: This library is under active development and not ready for production use
 
 #### Usage
 
