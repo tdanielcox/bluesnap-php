@@ -7,9 +7,9 @@
 ```php
 <?php namespace App;
 
-include tdanielcox\Bluesnap\Bluesnap;
-include tdanielcox\Bluesnap\Vendor;
-include tdanielcox\Bluesnap\CardTransaction;
+use tdanielcox\Bluesnap\Bluesnap;
+use tdanielcox\Bluesnap\Vendor;
+use tdanielcox\Bluesnap\CardTransaction;
 
 class Gateway 
 {
