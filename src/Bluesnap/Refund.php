@@ -7,5 +7,8 @@ namespace tdanielcox\Bluesnap;
  */
 class Refund
 {
-
+    public static function update($id, $data)
+    {
+        return Adapter::update('Refund', $id, $data);
+    }
 }

@@ -4,8 +4,6 @@ namespace tdanielcox\Bluesnap\Models;
 
 /**
  * Class Report
- *
- * @package tdanielcox\VendorAdapterFacade\Models
  */
 class Report extends Model
 {

@@ -3,24 +3,19 @@
 namespace tdanielcox\Bluesnap\Models;
 
 /**
- * Class PaymentSources
+ * Class PaymentSource
  */
-class PaymentSources extends Model
+class PaymentSource extends Model
 {
     public function __construct($data = null)
     {
         parent::__construct($data);
     }
 
-    protected $children = ['creditCardInfo' => self::COLLECTION, 'ecpInfo' => self::COLLECTION];
+    protected $children = ['creditCardInfo' => self::COLLECTION];
 
     /**
      * @var CreditCardInfo[]
      */
     public $creditCardInfo;
-
-    /**
-     * @var EcpInfo[]
-     */
-    public $ecpInfo;
 }

@@ -7,7 +7,7 @@ namespace tdanielcox\Bluesnap\Models;
  */
 class CardHolderInfo extends Model
 {
-    public function __construct($data)
+    public function __construct($data = null)
     {
         parent::__construct($data);
     }

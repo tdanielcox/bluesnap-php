@@ -18,7 +18,7 @@ class Adapter
         try
         {
             $is_collection = $id === null;
-            $endpoint = Utility::getModelEndpoint($model);
+            $endpoint = Utility::getModelEndpoint($model, $id);
 
             $response = Api::get($endpoint, $id, $query_params);
             $response = Utility::setupModel($model, $response, $is_collection, $target_parameter);
@@ -96,7 +96,7 @@ class Adapter
         try
         {
             $data = Utility::objectToArray($data);
-            $endpoint = Utility::getModelEndpoint($model);
+            $endpoint = Utility::getModelEndpoint($model, $id);
             $endpoint = $id_in_url ? $endpoint .'/'. $id : $endpoint;
 
             $response = Api::put($endpoint, $data);
@@ -133,7 +133,7 @@ class Adapter
     {
         try
         {
-            $endpoint = Utility::getModelEndpoint($model);
+            $endpoint = Utility::getModelEndpoint($model, $id);
             $endpoint = $endpoint .'/'. $id;
             Api::delete($endpoint);
 

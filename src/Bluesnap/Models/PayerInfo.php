@@ -3,51 +3,44 @@
 namespace tdanielcox\Bluesnap\Models;
 
 /**
- * Class PayoutInfo
+ * Class PayerInfo
  */
-class PayoutInfo extends Model
+class PayerInfo extends Model
 {
     public function __construct($data = null)
     {
         parent::__construct($data);
     }
 
-    protected $children = ['intermediaryBankInfo' => self::ITEM];
+    /**
+     * @var string
+     */
+    public $companyName;
 
     /**
      * @var string
      */
-    public $payoutType;
+    public $firstName;
 
     /**
      * @var string
      */
-    public $baseCurrency;
+    public $lastName;
 
     /**
      * @var string
      */
-    public $nameOnAccount;
+    public $email;
 
     /**
      * @var string
      */
-    public $bankAccountType;
+    public $phone;
 
     /**
      * @var string
      */
-    public $bankAccountClass;
-
-    /**
-     * @var string
-     */
-    public $bankName;
-
-    /**
-     * @var integer
-     */
-    public $bankId;
+    public $merchantShopperId;
 
     /**
      * @var string
@@ -72,15 +65,11 @@ class PayoutInfo extends Model
     /**
      * @var string
      */
+    public $address2;
+
+    /**
+     * @var string
+     */
     public $zip;
 
-    /**
-     * @var integer
-     */
-    public $bankAccountId;
-
-    /**
-     * @var IntermediaryBankInfo
-     */
-    public $intermediaryBankInfo;
 }

@@ -41,9 +41,12 @@ class Utility
         $models = [
             'CardTransaction' => 'transactions',
             'Report' => 'report',
+            'Refund' => 'transactions/'. $model_id .'/refund',
+            'Plan' => 'recurring/plans',
+            'Subscription' => 'recurring/subscriptions',
+            'SubscriptionCharge' => 'recurring/subscriptions/charges',
             'VaultedShopper' => 'vaulted-shoppers',
             'Vendor' => 'vendors',
-            'Refund' => 'transactions/'. $model_id .'/refund'
         ];
 
         return $models[$model];

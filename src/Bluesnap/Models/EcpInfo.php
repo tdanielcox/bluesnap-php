@@ -4,12 +4,10 @@ namespace tdanielcox\Bluesnap\Models;
 
 /**
  * Class EcpInfo
- *
- * @package tdanielcox\VendorAdapterFacade\Models
  */
 class EcpInfo extends Model
 {
-    public function __construct($data)
+    public function __construct($data = null)
     {
         parent::__construct($data);
     }

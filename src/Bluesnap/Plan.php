@@ -3,29 +3,29 @@
 namespace tdanielcox\Bluesnap;
 
 /**
- * Class Subscription
+ * Class Plan
  */
-class Subscription
+class Plan
 {
     public static function get($id = null, $query_params = null)
     {
-        return Adapter::get('Subscription', $id, [
+        return Adapter::get('Plan', $id, [
             'query_params' => $query_params
         ]);
     }
 
     public static function create($data)
     {
-        return Adapter::create('Subscription', $data);
+        return Adapter::create('Plan', $data);
     }
 
     public static function update($id, $data)
     {
-        return Adapter::update('Subscription', $id, $data);
+        return Adapter::update('Plan', $id, $data);
     }
 
     public static function delete($id)
     {
-        return Adapter::delete('Subscription', $id);
+        return Adapter::delete('Plan', $id);
     }
 }

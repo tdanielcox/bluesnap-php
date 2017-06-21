@@ -8,7 +8,7 @@ namespace tdanielcox\Bluesnap\Models;
  */
 class IntermediaryBankInfo extends Model
 {
-    public function __construct($data)
+    public function __construct($data = null)
     {
         parent::__construct($data);
     }

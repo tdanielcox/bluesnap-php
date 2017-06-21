@@ -4,8 +4,6 @@ namespace tdanielcox\Bluesnap\Models;
 
 /**
  * Class CreditCard
- *
- * @package tdanielcox\VendorAdapterFacade\Models
  */
 class CreditCard extends Model
 {

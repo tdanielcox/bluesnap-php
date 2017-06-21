@@ -7,7 +7,7 @@ namespace tdanielcox\Bluesnap\Models;
  */
 class Vendor extends Model
 {
-    public function __construct($data)
+    public function __construct($data = null)
     {
         parent::__construct($data, 'vendorId');
     }
