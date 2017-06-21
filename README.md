@@ -2,6 +2,14 @@
 
 ### NOTICE: This library is under active development and not ready for production use
 
+#### Installation
+
+Install this package with composer
+
+```shell
+composer require tdanielcox/bluesnap-php
+```
+
 #### Usage
 
 ```php
