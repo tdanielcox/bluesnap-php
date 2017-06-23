@@ -2,7 +2,7 @@
 
 ### NOTICE: This library is under active development and not ready for production use
 
-This (unofficial) library is meant to unify and simplify working with the bluesnap api. 
+This (unofficial) library standardizes and simplifies working with the bluesnap api. 
 
 All the standard api documentation is applicable to this library. 
 
