@@ -18,6 +18,7 @@ https://developers.bluesnap.com/v8976-JSON/docs
 - Subscriptions
 - Plans (Subscriptions)
 - Refunds
+- Reports
 
 #### Installation
 
