@@ -6,9 +6,18 @@ This (unofficial) library is meant to unify and simplify working with the bluesn
 
 All the standard api documentation is applicable to this library. 
 
-View the documentation here:
+View the bluesnap documentation here:
 
 https://developers.bluesnap.com/v8976-JSON/docs
+
+#### This library currently supports:
+
+CardTransactions
+VaultedShoppers
+Vendors
+Subscriptions
+Plans (Subscriptions)
+Refunds
 
 #### Installation
 
@@ -132,9 +141,9 @@ public function getReport()
         // handle error
     }
 
-    $transaction = $response->data;
+    $report = $response->data;
 
-    return $transaction;
+    return $report;
 }
 ```
 
