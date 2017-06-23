@@ -2,6 +2,11 @@
 
 ### NOTICE: This library is under active development and not ready for production use
 
+This (unofficial) library is meant to unify and simplify working with the bluesnap api. 
+All the standard api documentation is applicable to this library. View the documentation here:
+
+https://developers.bluesnap.com/v8976-JSON/docs
+
 #### Installation
 
 Install this package with composer
@@ -11,6 +16,8 @@ composer require tdanielcox/bluesnap-php
 ```
 
 #### Usage
+
+Initialize the library in your constructor using your environment, api key, and password
 
 ```php
 <?php namespace App;
@@ -30,7 +37,15 @@ class Gateway
         
         Bluesnap::init($environment, $api_key, $password);
     }
-    
+}
+```
+
+This library is
+
+
+Create a new transaction 
+
+```php    
     //  Create a vendor
     public function createVendor()
     {
