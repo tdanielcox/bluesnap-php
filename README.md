@@ -12,12 +12,12 @@ https://developers.bluesnap.com/v8976-JSON/docs
 
 #### This library currently supports:
 
-CardTransactions
-VaultedShoppers
-Vendors
-Subscriptions
-Plans (Subscriptions)
-Refunds
+- CardTransactions
+- VaultedShoppers
+- Vendors
+- Subscriptions
+- Plans (Subscriptions)
+- Refunds
 
 #### Installation
 
