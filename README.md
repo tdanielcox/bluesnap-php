@@ -33,29 +33,22 @@ composer require tdanielcox/bluesnap-php
 Initialize the library in your constructor using your environment, api key, and password
 
 ```php
-<?php namespace App;
-
-use tdanielcox\Bluesnap\Bluesnap;
-use tdanielcox\Bluesnap\Vendor;
-use tdanielcox\Bluesnap\CardTransaction;
-
-class Gateway 
+public function __construct() 
 {
-    //  Initialize Bluesnap
-    public function __construct() 
-    {
-        $environment = 'staging'; // or 'production'        
-        Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
-    }
+    $environment = 'staging'; // or 'production'        
+    \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
 }
 ```
 
-Create a new transaction (with vendor & vaultedShopper)
+Create a new Transaction (with vendor & vaultedShopper)
 
-```php    
+```php
+/**
+ * @return \tdanielcox\Bluesnap\Models\CardTransaction
+ */
 public function createTransaction()
 {        
-    $response = CardTransaction::create([
+    $response = \tdanielcox\Bluesnap\CardTransaction::create([
        'creditCard' => [
            'securityCode' => $securityCode,
            'cardLastFourDigits' => $cardLastFourDigits,
@@ -85,12 +78,15 @@ public function createTransaction()
 }
 ```
 
-Get a transaction
+Get a Transaction
 
-```php    
+```php
+/**
+ * @return \tdanielcox\Bluesnap\Models\CardTransaction
+ */
 public function getTransaction()
 {        
-    $response = CardTransaction::get($transaction_id);
+    $response = \tdanielcox\Bluesnap\CardTransaction::get($transaction_id);
 
     if ($response->failed()) {
         $error = $response->data;
@@ -104,12 +100,31 @@ public function getTransaction()
 }
 ```
 
+Get all Transactions
+
+```php
+/**
+ * @return \tdanielcox\Bluesnap\Models\CardTransaction[]
+ */
+public function getAllTransactions()
+{        
+    $response = \tdanielcox\Bluesnap\CardTransaction::get();
+
+    $transactions = $response->data;
+
+    return $transactions;
+}
+```
+
 Create a Vendor
 
 ```php
+/**
+ * @return \tdanielcox\Bluesnap\Models\Vendor
+ */
 public function createVendor()
 {
-    $response = Vendor::create([
+    $response = \tdanielcox\Bluesnap\Vendor::create([
         'email' => 'vendoremail@example.com',
         'country' => 'US'
     ]);
@@ -129,10 +144,13 @@ public function createVendor()
 Get a Report
 
 ```php
+/**
+ * @return \tdanielcox\Bluesnap\Models\Report
+ */
 public function getReport()
 {
     // pass query parameters as array
-    $response = Report::get('TransactionDetail', [
+    $response = \tdanielcox\Bluesnap\Report::get('TransactionDetail', [
         'period' => 'THIS_MONTH'
     ]);
     
