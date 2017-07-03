@@ -12,26 +12,59 @@ class CardTransactionController
         \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
     }
 
+
     /**
-     * Create a new Transaction (with vendor & vaultedShopper)
+     * Create a New Transaction (simple)
+     *
+     * @return \tdanielcox\Bluesnap\Models\CardTransaction
+     */
+    public function createTransaction()
+    {
+        $response = \tdanielcox\Bluesnap\CardTransaction::create([
+            'creditCard' => [
+                'cardNumber' => '4263982640269299',
+                'expirationMonth' => '02',
+                'expirationYear' => '2018',
+                'securityCode' => '837'
+            ],
+            'amount' => 10.00,
+            'currency' => 'USD',
+            'recurringTransaction' => 'ECOMMERCE',
+            'cardTransactionType' => 'AUTH_CAPTURE',
+        ]);
+
+        if ($response->failed())
+        {
+            $error = $response->data;
+
+            // handle error
+        }
+
+        $transaction = $response->data;
+
+        return $transaction;
+    }
+
+    /**
+     * Authorize a New Transaction (with vendor, vaultedShopper, saved card)
      *
      * @param int $vaulted_shopper_id
      * @param int $vendor_id
      * @return \tdanielcox\Bluesnap\Models\CardTransaction
      */
-    public function createTransaction($vaulted_shopper_id, $vendor_id)
+    public function authorizeTransaction($vaulted_shopper_id, $vendor_id)
     {
         $response = \tdanielcox\Bluesnap\CardTransaction::create([
-            'creditCard' => [
-                'cardLastFourDigits' => '1111',
-                'securityCode' => '111',
-                'cardType' => 'VISA',
-            ],
             'vendorInfo' => [
                 'vendorId' => $vaulted_shopper_id,
                 'commissionAmount' => 4.00,
             ],
             'vaultedShopperId' => $vendor_id,
+            'creditCard' => [
+                'cardLastFourDigits' => '1111',
+                'securityCode' => '111',
+                'cardType' => 'VISA',
+            ],
             'amount' => 10.00,
             'currency' => 'USD',
             'recurringTransaction' => 'ECOMMERCE',

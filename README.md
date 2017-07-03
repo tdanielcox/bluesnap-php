@@ -36,6 +36,37 @@ public function __construct()
 }
 ```
 
+Create a New Transaction (simple)
+
+```php
+public function createTransaction()
+{
+    $response = \tdanielcox\Bluesnap\CardTransaction::create([
+        'creditCard' => [
+            'cardNumber' => '4263982640269299',
+            'expirationMonth' => '02',
+            'expirationYear' => '2018',
+            'securityCode' => '837'
+        ],
+        'amount' => 10.00,
+        'currency' => 'USD',
+        'recurringTransaction' => 'ECOMMERCE',
+        'cardTransactionType' => 'AUTH_CAPTURE',
+    ]);
+
+    if ($response->failed())
+    {
+        $error = $response->data;
+        
+        // handle error
+    }
+
+    $transaction = $response->data;
+    
+    return $transaction;
+}
+```
+
 #### See examples for further details on using the library
 
 ## License
