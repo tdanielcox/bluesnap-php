@@ -39,7 +39,33 @@ class CardTransactionController
             'softDescriptor' => 'Your description',
         ]);
 
-        if ($response->failed()) {
+        if ($response->failed())
+        {
+            $error = $response->data;
+
+            // handle error
+        }
+
+        $transaction = $response->data;
+
+        return $transaction;
+    }
+
+    /**
+     * Capture a previously authorized transaction
+     *
+     * @param int $transaction_id
+     * @return \tdanielcox\Bluesnap\Models\CardTransaction
+     */
+    public function captureTransaction($transaction_id)
+    {
+        $response = \tdanielcox\Bluesnap\CardTransaction::update($transaction_id, [
+            'transactionId' => $transaction_id,
+            'cardTransactionType' => 'CAPTURE',
+        ]);
+
+        if ($response->failed())
+        {
             $error = $response->data;
 
             // handle error
@@ -60,7 +86,8 @@ class CardTransactionController
     {
         $response = \tdanielcox\Bluesnap\CardTransaction::get($transaction_id);
 
-        if ($response->failed()) {
+        if ($response->failed())
+        {
             $error = $response->data;
 
             // handle error
