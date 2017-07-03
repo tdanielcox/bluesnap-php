@@ -67,7 +67,7 @@ public function createTransaction()
 }
 ```
 
-#### See examples for further details on using the library
+#### See [examples](https://github.com/tdanielcox/bluesnap-php/tree/master/examples) for further details on using the library
 
 ## License
 This package is licensed under the [MIT License](https://github.com/tdanielcox/bluesnap-php/blob/master/LICENSE)
