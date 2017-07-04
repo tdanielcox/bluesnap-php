@@ -36,7 +36,7 @@ public function __construct()
 }
 ```
 
-Create a New Transaction (simple)
+Create a New Transaction
 
 ```php
 public function createTransaction()
