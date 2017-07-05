@@ -31,7 +31,7 @@ Initialize the library in your class constructor
 ```php
 public function __construct()
 {
-    $environment = 'staging'; // or 'production'
+    $environment = 'sandbox'; // or 'production'
     \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
 }
 ```

@@ -8,7 +8,7 @@ class VaultedShopperController
      */
     public function __construct()
     {
-        $environment = 'staging'; // or 'production'
+        $environment = 'sandbox'; // or 'production'
         \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
     }
 
@@ -75,7 +75,7 @@ class VaultedShopperController
      * Add a New Card to a VaultedShopper
      *
      * @param int $vaulted_shopper_id
-     * @return \tdanielcox\Bluesnap\Models\VaultedShopper[]
+     * @return \tdanielcox\Bluesnap\Models\VaultedShopper
      */
     public function addCardToVaultedShopper($vaulted_shopper_id)
     {
