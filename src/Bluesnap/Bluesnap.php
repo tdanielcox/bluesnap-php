@@ -27,6 +27,11 @@ class Bluesnap
 
     public static function getCredentials()
     {
+        if (!self::$api_key || !self::$password)
+        {
+            return null;
+        }
+
         return [ self::$api_key, self::$password ];
     }
 
