@@ -4,6 +4,7 @@ namespace tdanielcox\Bluesnap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
+use tdanielcox\Bluesnap\Exceptions\MissingFieldsException;
 
 class Api
 {
@@ -11,6 +12,11 @@ class Api
     {
         $credentials = Bluesnap::getCredentials();
         $base_url = Bluesnap::getBaseUrl();
+
+        if (!$credentials)
+        {
+            throw new MissingFieldsException('No BlueSnap credentials provided');
+        }
 
         return new Client([
             'base_uri' => $base_url,
