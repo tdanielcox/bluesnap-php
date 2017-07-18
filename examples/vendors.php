@@ -30,7 +30,7 @@ class VendorController
             // handle error
         }
 
-        $transaction = $response->data;
+        $vendor = $response->data;
 
         return $transaction;
     }
