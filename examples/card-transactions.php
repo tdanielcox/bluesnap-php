@@ -56,10 +56,10 @@ class CardTransactionController
     {
         $response = \tdanielcox\Bluesnap\CardTransaction::create([
             'vendorInfo' => [
-                'vendorId' => $vaulted_shopper_id,
+                'vendorId' => $vendor_id,
                 'commissionAmount' => 4.00,
             ],
-            'vaultedShopperId' => $vendor_id,
+            'vaultedShopperId' => $vaulted_shopper_id,
             'creditCard' => [
                 'cardLastFourDigits' => '1111',
                 'securityCode' => '111',
