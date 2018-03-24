@@ -1,5 +1,7 @@
 ## Bluesnap PHP Library
 
+**NOTE** this library is not production ready as my company decided against using bluesnap shortly after starting this project. Please feel free to fork it and make it fit your needs, all endpoints are working as of June 2017, however the library is missing several features that bluesnap offers. Development and maintence on this project has been discontinued. 
+
 This (unofficial) library standardizes and simplifies working with the bluesnap api. 
 
 All the standard api documentation is applicable to this library. 
