@@ -99,7 +99,11 @@ class Adapter
             $endpoint = Utility::getModelEndpoint($model, $id);
             $endpoint = $id_in_url ? $endpoint .'/'. $id : $endpoint;
 
-            $response = Api::put($endpoint, $data);
+            if($model == 'Refund') {
+                $response = Api::post($endpoint, $data);
+            } else {
+                $response = Api::put($endpoint, $data);
+            }
             $model = Utility::setupModel($model, $response);
 
             return new Response('success', $model);
